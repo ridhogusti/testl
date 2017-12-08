@@ -1,20 +1,20 @@
 import { connect } from 'react-redux';
 import Heroes from '../screens/Heroes';
-import fetchHeroes from '../actions/heroes';
+import { fetchHeroes } from '../actions/heroes';
 
 const mapStateToProps = (state) => (
-    {
-        data: state
-    }
+  {
+    data: state,
+  }
 );
 
 const mapDispatchToProps = (dispatch) => ({
-   fetchHeroes: () => {
-       dispatch(fetchHeroes())
-   } 
-})
+  fetchHeroes: () => {
+    dispatch(fetchHeroes());
+  }, 
+});
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Heroes);

@@ -1,4 +1,4 @@
-package com.cobacoba;
+package com.ccrud;
 
 import com.facebook.react.ReactActivity;
 import com.reactnativenavigation.controllers.SplashActivity;
@@ -11,6 +11,6 @@ public class MainActivity extends SplashActivity{
      */
     // @Override
     // protected String getMainComponentName() {
-    //     return "Cobacoba";
+    //     return "ccrud";
     // }
 }

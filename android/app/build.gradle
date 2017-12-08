@@ -94,7 +94,7 @@ android {
     buildToolsVersion "25.0.1"
 
     defaultConfig {
-        applicationId "com.cobacoba"
+        applicationId "com.ccrud"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1

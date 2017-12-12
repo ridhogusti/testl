@@ -7,6 +7,8 @@ import Settings from './Settings';
 import HeroAdd from './HeroAdd';
 import HeroView from './HeroView';
 import HeroEdit from './HeroEdit';
+import Login from './Login';
+import Loginn from './Loginn';
 
 // register all screens of the app (including internal ones)
 export function registerScreens(store, Provider) {
@@ -16,6 +18,8 @@ export function registerScreens(store, Provider) {
   Navigation.registerComponent('push.HeroAdd', () => HeroAdd, store, Provider);
   Navigation.registerComponent('push.HeroView', () => HeroView, store, Provider);
   Navigation.registerComponent('push.HeroEdit', () => HeroEdit, store, Provider);
+  Navigation.registerComponent('Login', () => Login, store, Provider);
+  Navigation.registerComponent('Loginn', () => Loginn, store, Provider);
 }
 
 export function registerScreenVisibilityListener() {

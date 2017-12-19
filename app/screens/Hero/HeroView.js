@@ -5,7 +5,7 @@ import { Container, Content, Text, Header, Left, Right, Body, Icon,
 import { TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { fetchHeroes } from '../actions/heroes';
+import { fetchHeroes } from '../../actions/heroes';
 
 class HeroView extends Component {
     static navigatorStyle = {

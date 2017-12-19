@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Heroes from '../screens/Hero/Heroes';
-import { fetchHeroes } from '../actions/heroes';
+import Profile from '../screens/Profile';
+import { getDataDiri } from '../actions/profile';
 
 const mapStateToProps = (state) => (
   {
@@ -9,12 +9,12 @@ const mapStateToProps = (state) => (
 );
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchHeroes: () => {
-    dispatch(fetchHeroes());
+  getDataDiri: (token) => {
+    dispatch(getDataDiri(token));
   }, 
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Heroes);
+)(Profile);

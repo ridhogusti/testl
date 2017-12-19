@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Heroes from '../screens/Hero/Heroes';
-import { fetchHeroes } from '../actions/heroes';
+import Home from '../screens/Home';
+import { getBerita } from '../actions/home';
 
 const mapStateToProps = (state) => (
   {
@@ -9,12 +9,13 @@ const mapStateToProps = (state) => (
 );
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchHeroes: () => {
-    dispatch(fetchHeroes());
+  getBerita: (token) => {
+    dispatch(getBerita(token));
   }, 
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Heroes);
+)(Home);
+

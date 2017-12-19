@@ -6,7 +6,7 @@ import {
 import { TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { fetchHeroes } from '../actions/heroes';
+import { fetchHeroes } from '../../actions/heroes';
 
 class HeroAdd extends Component {
     static navigatorStyle = {

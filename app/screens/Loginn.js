@@ -139,6 +139,11 @@ export default class Loginn extends Component {
       //   statusBarColor: '#002b4c',
       //   tabFontFamily: 'BioRhyme-Bold',
       // },
+      drawer: {
+        left: {
+          screen: 'Drawer',
+        },
+      },
     });
   }
   storeToken(responseData) {
@@ -156,17 +161,15 @@ export default class Loginn extends Component {
   async login() {
     this.setState({ showProgress: true });
     try {
-      const response = await fetch('https://afternoon-beyond-22141.herokuapp.com/api/login', {
+      const response = await fetch('http://pantausiswa.xyz/api/login', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          session: {
-            email: this.state.email,
-            password: this.state.password,
-          },
+          email: this.state.email,
+          password: this.state.password,
         }),
       });
       const res = await response.text();

@@ -1,5 +1,5 @@
 {
-	"name": "ccrud",
+	"name": "pantauu",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -11,7 +11,9 @@
 		"native-base": "^2.3.2",
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.48.4",
+		"react-native-animatable": "^1.2.4",
 		"react-native-navigation": "^1.1.231",
+		"react-native-read-more-text": "^1.0.0",
 		"react-native-vector-icons": "^4.4.0",
 		"react-navigation": "^1.0.0-beta.11",
 		"react-redux": "^5.0.6",

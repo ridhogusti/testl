@@ -1,46 +1,67 @@
 import React, { Component } from 'react';
-import { Container, Content, Text, Thumbnail, Button } from 'native-base';
+import { AsyncStorage } from 'react-native';
+import { Container, Content, Text, Thumbnail, Button,
+  Header, Left, Body, Title, Right,
+} from 'native-base';
+import Berita from '../components/Berita';
 
-function Home(props) {
-  return (
-    <Container style={{ justifyContent: 'center', alignSelf: 'center' }}>
-      <Content>
-        <Text style={nbStyles.subtitle}>
-                    Welcome to Mobile Legends
-        </Text>
-        <Text style={nbStyles.subtitle}>
-                    Heroes Dictionary
-        </Text>
-        <Text style={nbStyles.subtitle}>
-                    Start Exploring/Creating
-        </Text>
-        <Text style={nbStyles.subtitle}>
-                    Your Favourites Heroes
-        </Text>
+const ACCESS_TOKEN = 'access_token';
 
-        <Button 
-          onPress={() => props.navigator.switchToTab({
-            tabIndex: 1,
-          })}
-          block style={nbStyles.btn}
+export default class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      beritas: [],
+    };
+  }
+
+  componentDidMount() {
+    this.getToken();
+  }
+
+  async getToken() {
+    try {
+      const accessToken = await AsyncStorage.getItem(ACCESS_TOKEN);
+      const aoeu = accessToken.split('"');
+      console.log(aoeu[3]);
+      this.props.getBerita(aoeu[3]);
+      console.log(this.props.getBerita(aoeu[3]));
+    } catch (error) {
+      console.log('Something went wrong');
+    }
+  }
+  _header() {
+    return (
+      <Header>
+        <Left />
+        <Body>
+          <Title>Berita</Title>
+        </Body>
+        <Right />
+      </Header>
+    );
+  }
+  render() {
+    if (this.props.data.homeReducer.fetching) {
+      return (
+        <Content>
+          <Text>Loading...</Text>
+        </Content>
+      );
+    }
+    return (
+      <Container>
+        {this._header()}
+        <Content
+          style={{ margin: 10 }}
         >
-          <Text>
-                       Start
-          </Text>
-        </Button> 
-      </Content>
-    </Container>
-  );
+
+          {
+            this.props.data.homeReducer.beritas.map((berita, key) => <Berita key={key} berita={berita} {...this.props} />)
+          }
+
+        </Content>
+      </Container>
+    );
+  }
 }
-
-export default Home;
-
-const nbStyles = {
-  subtitle: {
-    textAlign: 'center',
-    color: '#ACD2FA',
-  },
-  btn: {
-    marginTop: 15,
-  },
-};

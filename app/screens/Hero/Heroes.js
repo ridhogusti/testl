@@ -10,9 +10,9 @@ import { TouchableOpacity, AsyncStorage,
 import { Navigation } from 'react-native-navigation';
 
 import { Provider } from 'react-redux';
-import { registerScreens, registerScreenVisibilityListener } from '../screens';
-import Hero from '../components/Hero';
-import store from '../store';
+import { registerScreens, registerScreenVisibilityListener } from '../../screens';
+import Hero from '../../components/Hero';
+import store from '../../store';
 // import Icon from 'react-native-vector-icons/Ionicons';
 registerScreens(store, Provider); // this is where you register all of your app's screens
 registerScreenVisibilityListener();
@@ -71,7 +71,7 @@ export default class Heroes extends Component {
     );
   }
   render() {
-    if (this.props.data.fetching) {
+    if (this.props.data.heroesReducer.fetching) {
       return (
         <View>
           <Text>Loading...</Text>
@@ -94,7 +94,7 @@ export default class Heroes extends Component {
           {/* <Text>{this.props.data}</Text>*/}
           <List>
             {
-              this.props.data.heroes.map((hero, key) => <Hero key={key} hero={hero} {...this.props} />)
+              this.props.data.heroesReducer.heroes.map((hero, key) => <Hero key={key} hero={hero} {...this.props} />)
             }
           </List>
         </Content>

@@ -13,4 +13,3 @@ export function getHero(id) {
     payload: axios.get(`http://rest.learncode.academy/api/ridhogusti/heroes/${id}`),
   };
 }
-

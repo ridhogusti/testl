@@ -140,6 +140,11 @@ export default class Login extends Component {
       //   statusBarColor: '#002b4c',
       //   tabFontFamily: 'BioRhyme-Bold',
       // },
+      drawer: {
+        left: {
+          screen: 'Drawer',
+        },
+      },
     });
   }
   loadSingle() {

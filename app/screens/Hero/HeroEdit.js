@@ -3,7 +3,7 @@ import { Container, Content, Text, Button } from 'native-base';
 import { connect } from 'react-redux';
 import t from 'tcomb-form-native';
 import axios from 'axios';
-import { getHero, fetchHeroes } from '../actions/heroes';
+import { getHero, fetchHeroes } from '../../actions/heroes';
 
 const Form = t.form.Form;
 const FormSchema = t.struct({
@@ -41,7 +41,7 @@ class HeroEdit extends Component {
       }
     }
     render() {
-      const { hero } = this.props.data;
+      const { hero } = this.props.data.heroesReducer;
       return (
         <Container
           style={{ padding: 10 }}
